@@ -8,9 +8,7 @@ app = Flask(__name__)
 with open('sal_mod.pkl' , 'rb') as file:
     model = pickle.load(file)
 
-# Load the another model to train
-# with open('another_pickle_file.pkl' , 'rb') as myfile:
-#     model = pickle.load(myfile)
+
 
 
 
@@ -26,11 +24,7 @@ def predict():
     prediction = model.predict([[experience]])[0]
     return render_template('index.html' , prediction_text = f'Predicted Salary: ${prediction:.2f}') 
 
-# Route to get demo Prediction
-@app.route('/predict2' , methods = ['GET'])
-def predict2():
-    numbericalValue1 = int(request.form['numbericVal11'])
-    predictValue1 = model.predict
+
 
 
 # Run Flask App
