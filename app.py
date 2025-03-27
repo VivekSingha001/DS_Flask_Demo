@@ -5,7 +5,7 @@ from flask import Flask , request , render_template
 app = Flask(__name__)
 
 # Load the trained model
-with open('sal_mod.pkl' , 'rb') as file:
+with open('/Users/arunphilipsizeon/Desktop/ml_ pridictor/DS_Flask_Demo/sal_mod.pkl' , 'rb') as file:
     model = pickle.load(file)
 
 
@@ -29,6 +29,6 @@ def predict():
 
 # Run Flask App
 if __name__ == '__main__':
-    app.run(debug = True) 
+    app.run(debug = True, host="0.0.0.0") 
 
     
